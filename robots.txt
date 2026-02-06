@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://syndicate89.github.io/mypick-design-portfolio/sitemap.xml
