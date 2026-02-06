@@ -78,7 +78,7 @@ ul {
 }
 
 .logo img {
-    height: 56px;
+    height: 72px;
     width: auto;
     filter: invert(1) brightness(2);
 }
@@ -614,7 +614,7 @@ ul {
 }
 
 .footer-logo img {
-    height: 64px;
+    height: 80px;
     margin: 0 auto 24px;
     filter: invert(1) brightness(2);
 }
