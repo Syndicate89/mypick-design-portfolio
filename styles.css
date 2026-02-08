@@ -9,7 +9,7 @@
     --text-secondary: #a0a0b0;
     --text-muted: #6a6a7a;
     --border-color: #2a2a3a;
-    --gradient-primary: linear-gradient(135deg, #F5A623 0%, #FF8C00 100%);
+    --gradient-primary: linear-gradient(135deg, #F5A623 0%, #F59E0B 100%);
     --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -80,7 +80,8 @@ ul {
 .logo img {
     height: 72px;
     width: auto;
-    filter: invert(1) brightness(2);
+    filter: brightness(0) invert(1);
+    background: transparent;
 }
 
 .nav-links {
@@ -616,7 +617,8 @@ ul {
 .footer-logo img {
     height: 80px;
     margin: 0 auto 24px;
-    filter: invert(1) brightness(2);
+    filter: brightness(0) invert(1);
+    background: transparent;
 }
 
 .footer-info {
