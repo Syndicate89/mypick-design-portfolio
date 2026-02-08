@@ -150,6 +150,7 @@ ul {
 }
 
 .hero-title .highlight {
+    color: #F5A623;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -270,6 +271,7 @@ ul {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     margin-bottom: 16px;
+    color: #F5A623;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -921,6 +923,7 @@ ul {
 .page-title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 700;
+    color: #F5A623;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
