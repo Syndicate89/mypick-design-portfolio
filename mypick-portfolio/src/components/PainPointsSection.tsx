@@ -4,24 +4,26 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function PainPointsSection() {
+    const basePath = process.env.NODE_ENV === "production" ? "/mypick-design-portfolio" : "";
+
     const painPoints = [
         {
             title: "업체 연락이 잘 안 되면 어쩌지?",
             desc: "결제 후 담당자와 연락이 닿지 않거나 피드백이 느릴까 봐 걱정이신가요? 작업 현황을 알 수 없어 답답한 상황을 만들지 않습니다.",
             bgColor: "bg-[#b0f5c8]",
-            image: "/images/painpoint_contact.png",
+            image: `${basePath}/images/painpoint_contact.png`,
         },
         {
             title: "공장형 템플릿으로 대충 만드는 거 아니야?",
             desc: "남들과 똑같은 결과물이 나오는 건 아닐까 염려되시나요? 브랜드 고유의 가치를 살린 100% 맞춤형 디자인을 약속합니다.",
             bgColor: "bg-[#f5f5f5]",
-            image: "/images/painpoint_template.png",
+            image: `${basePath}/images/painpoint_template.png`,
         },
         {
             title: "결과물이 마음에 안 들면 어쩌지?",
             desc: "미리 결과물을 보지 못하고 결제부터 해야 해서 불안하신가요? 마음에 들 때까지 수정해 드리고, 불만족 시 환불해 드립니다.",
             bgColor: "bg-[#ffe2bb]",
-            image: "/images/painpoint_dissatisfaction.png",
+            image: `${basePath}/images/painpoint_dissatisfaction.png`,
         },
     ];
 
