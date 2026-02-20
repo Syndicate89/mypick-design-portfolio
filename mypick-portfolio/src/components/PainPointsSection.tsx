@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function PainPointsSection() {
-    const basePath = process.env.NODE_ENV === "production" ? "/mypick-design-portfolio" : "";
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
     const painPoints = [
         {
