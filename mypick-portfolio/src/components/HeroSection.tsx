@@ -7,24 +7,24 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 export default function HeroSection() {
+    const sectionRef = useRef<HTMLElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
+        const section = sectionRef.current;
         const canvas = canvasRef.current;
-        if (!canvas) return;
+        if (!canvas || !section) return;
+
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
         let animationFrameId: number;
+        let isVisible = true;
         let w = canvas.width = window.innerWidth;
         let h = canvas.height = window.innerHeight;
 
         const particles: Particle[] = [];
-
-        // Define the origin of the flow (starts at center)
         const origin = { x: w / 2, y: h / 2 };
-
-        // Track actual mouse position
         const mouse = { x: w / 2, y: h / 2, isActive: false };
 
         const handleMouseMove = (e: MouseEvent) => {
@@ -56,24 +56,21 @@ export default function HeroSection() {
                 origin.x = w / 2;
                 origin.y = h / 2;
             }
-            init();
+            if (isVisible) init();
         };
         window.addEventListener("resize", handleResize);
 
         class Particle {
             x: number;
             y: number;
-            z: number; // For 3D depth simulation
+            z: number;
             baseSize: number;
             type: 'emerald' | 'white' | 'darkemerald';
 
             constructor() {
-                // Initialize randomly on a 3D plane
                 this.x = (Math.random() - 0.5) * w * 2;
                 this.y = (Math.random() - 0.5) * h * 2;
-                this.z = Math.random() * w; // Depth depth
-
-                // Smaller, denser particles
+                this.z = Math.random() * w;
                 this.baseSize = Math.random() * 2 + 1;
 
                 const types: ('emerald' | 'white' | 'darkemerald')[] = ['emerald', 'white', 'darkemerald'];
@@ -81,24 +78,18 @@ export default function HeroSection() {
             }
 
             draw() {
-                // Determine 2D coordinates based on 3D depth and current origin
                 const scale = w / this.z;
                 const px = this.x * scale + origin.x;
                 const py = this.y * scale + origin.y;
 
-                // Calculate the "previous" position (where the particle was a moment ago)
-                const prevZ = this.z + 9; // speed value
+                const prevZ = this.z + 9;
                 const prevScale = w / prevZ;
                 const prevPx = this.x * prevScale + origin.x;
                 const prevPy = this.y * prevScale + origin.y;
 
-                // Calculate dynamic size (larger as it gets closer)
                 const currentSize = this.baseSize * (w / this.z) * 0.5;
 
-                // Only draw if within screen bounds and size is reasonable
                 if (px > -currentSize && px < w + currentSize && py > -currentSize && py < h + currentSize && currentSize > 0.5) {
-
-                    // Draw a streaking line from previous to current position
                     let strokeColor: string;
                     let tipColor: string;
 
@@ -113,7 +104,6 @@ export default function HeroSection() {
                         tipColor = 'rgba(16, 185, 129, 0.8)';
                     }
 
-                    // Draw the streak/tail line
                     ctx!.beginPath();
                     ctx!.moveTo(prevPx, prevPy);
                     ctx!.lineTo(px, py);
@@ -121,7 +111,6 @@ export default function HeroSection() {
                     ctx!.lineWidth = Math.max(0.5, currentSize * 0.6);
                     ctx!.stroke();
 
-                    // Draw the bright tip (head of the particle)
                     ctx!.fillStyle = tipColor;
                     ctx!.beginPath();
                     ctx!.arc(px, py, Math.max(0.5, currentSize * 0.8), 0, Math.PI * 2);
@@ -131,12 +120,9 @@ export default function HeroSection() {
             }
 
             update() {
-                // Move particle closer to viewer (decrease depth)
-                // 2x speed: much faster warp
                 const speed = 9;
                 this.z -= speed;
 
-                // If particle passes the viewer, reset it to the far distance
                 if (this.z <= 0) {
                     this.z = w;
                     this.x = (Math.random() - 0.5) * w * 2;
@@ -149,25 +135,24 @@ export default function HeroSection() {
 
         const init = () => {
             particles.length = 0;
-            // Adaptive: dense on desktop, capped on mobile for smooth 60fps
             const isMobile = w < 768;
             const numberOfParticles = isMobile
-                ? Math.min((w * h) / 1500, 800)  // Mobile: cap at 800
-                : (w * h) / 1000;                  // Desktop: maximum density
+                ? Math.min((w * h) / 1500, 800)
+                : (w * h) / 1000;
             for (let i = 0; i < numberOfParticles; i++) {
                 particles.push(new Particle());
             }
         };
 
         const animate = () => {
-            // Smoothly move the flow origin towards the mouse
+            if (!isVisible) return; // Stop animation loop when not visible
+
             const targetX = mouse.isActive ? mouse.x : w / 2;
             const targetY = mouse.isActive ? mouse.y : h / 2;
 
             origin.x += (targetX - origin.x) * 0.12;
             origin.y += (targetY - origin.y) * 0.12;
 
-            // Full clear for sharp, crisp particle movement
             ctx!.clearRect(0, 0, w, h);
 
             for (let i = 0; i < particles.length; i++) {
@@ -176,6 +161,22 @@ export default function HeroSection() {
             animationFrameId = requestAnimationFrame(animate);
         };
 
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const wasVisible = isVisible;
+                    isVisible = entry.isIntersecting;
+
+                    // Resume animation if it just became visible
+                    if (isVisible && !wasVisible) {
+                        animate();
+                    }
+                });
+            },
+            { threshold: 0.01 }
+        );
+
+        observer.observe(section);
         init();
         animate();
 
@@ -185,11 +186,12 @@ export default function HeroSection() {
             window.removeEventListener("mouseout", handleMouseLeave);
             window.removeEventListener("resize", handleResize);
             cancelAnimationFrame(animationFrameId);
+            observer.unobserve(section);
         };
     }, []);
 
     return (
-        <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-black">
+        <section ref={sectionRef} className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-black">
             {/* Custom Canvas Particle Background */}
             <canvas ref={canvasRef} className="absolute inset-0 z-0 w-full h-full pointer-events-auto" />
 
@@ -213,15 +215,6 @@ export default function HeroSection() {
                         압도적인 디자인과 탄탄한 기술력으로 확실한 신뢰를 구축해 드립니다.
                     </p>
 
-                    <button
-                        onClick={() => {
-                            const el = document.getElementById("portfolio");
-                            if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: "smooth" });
-                        }}
-                        className="bg-primary hover:bg-emerald-500 text-black px-10 py-3 rounded-full font-bold text-lg md:text-xl transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(0,208,132,0.3)] relative z-30 inline-block focus:outline-none"
-                    >
-                        포트폴리오 더 보기
-                    </button>
                 </motion.div>
             </div>
         </section>
