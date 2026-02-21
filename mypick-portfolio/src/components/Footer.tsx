@@ -58,7 +58,7 @@ export default function Footer() {
 
                     <div className="text-sm text-zinc-500 md:text-right leading-loose flex flex-col items-start md:items-end">
                         <p>회사명 : 마이픽 디자인</p>
-                        <p>이메일 : mypickdesign@example.com</p>
+                        <p>이메일 : tpoint1014@gmail.com</p>
                         <a
                             href="https://www.instagram.com/mypick.design/"
                             target="_blank"
