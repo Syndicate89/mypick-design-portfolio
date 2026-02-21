@@ -79,13 +79,14 @@ export default function HeroSection() {
 
             draw() {
                 const scale = w / this.z;
-                const px = this.x * scale + origin.x;
-                const py = this.y * scale + origin.y;
+                // Rounding pixel values to avoid sub-pixel rendering overhead
+                const px = Math.round(this.x * scale + origin.x);
+                const py = Math.round(this.y * scale + origin.y);
 
                 const prevZ = this.z + 9;
                 const prevScale = w / prevZ;
-                const prevPx = this.x * prevScale + origin.x;
-                const prevPy = this.y * prevScale + origin.y;
+                const prevPx = Math.round(this.x * prevScale + origin.x);
+                const prevPy = Math.round(this.y * prevScale + origin.y);
 
                 const currentSize = this.baseSize * (w / this.z) * 0.5;
 
@@ -136,9 +137,10 @@ export default function HeroSection() {
         const init = () => {
             particles.length = 0;
             const isMobile = w < 768;
+            // Reduce max volume for better performance
             const numberOfParticles = isMobile
-                ? Math.min((w * h) / 1500, 800)
-                : (w * h) / 1000;
+                ? Math.min((w * h) / 2000, 400)
+                : Math.min((w * h) / 1500, 1000);
             for (let i = 0; i < numberOfParticles; i++) {
                 particles.push(new Particle());
             }

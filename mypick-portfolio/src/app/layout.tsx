@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "마이픽 디자인 | 프리미엄 맞춤형 포트폴리오 제작",
@@ -15,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="scroll-smooth bg-background text-foreground">
+    <html lang="ko" className={`scroll-smooth bg-background text-foreground ${inter.className}`}>
       <body className="antialiased min-h-screen flex flex-col pt-[88px]">
         <Navbar />
         {children}

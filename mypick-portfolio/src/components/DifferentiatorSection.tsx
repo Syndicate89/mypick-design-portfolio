@@ -45,50 +45,50 @@ export default function DifferentiatorSection() {
                 <div className="absolute inset-0 bg-black z-0"></div>
 
                 {/* Subdued ambient back light */}
-                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80%] h-[500px] bg-emerald-900/10 blur-[150px] rounded-full z-10 animate-pulse" style={{ animationDuration: '8s' }} />
+                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80%] h-[500px] bg-emerald-900/10 blur-[100px] rounded-full z-10" />
 
                 {/* The sweeping Aurora Waves constructed via CSS transforms */}
-                <div className="absolute top-[20%] lg:top-[30%] w-full h-[70vh] z-10 flex justify-center perspective-[1000px] mix-blend-screen opacity-[0.65]">
+                <div className="absolute top-[20%] lg:top-[30%] w-full h-[70vh] z-10 flex justify-center perspective-[1000px] mix-blend-screen opacity-[0.65] will-change-transform">
                     {/* Background wide sweeping wave - Thick Glass Ribbon */}
                     <div
-                        className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[200%] md:w-[150%] h-[300px] rounded-[100%] animate-pulse border-y border-emerald-300/40 bg-gradient-to-b from-emerald-400/10 via-transparent to-cyan-500/10 backdrop-blur-[2px] shadow-[inset_0_0_40px_rgba(52,211,153,0.15)] blur-[6px]"
-                        style={{ transform: 'rotate(-8deg) scaleY(0.12)', animationDuration: '8s' }}
+                        className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[200%] md:w-[150%] h-[300px] rounded-[100%] border-y border-emerald-300/40 bg-gradient-to-b from-emerald-400/10 via-transparent to-cyan-500/10 backdrop-blur-[1px] shadow-[inset_0_0_20px_rgba(52,211,153,0.1)] blur-[4px] will-change-transform"
+                        style={{ transform: 'rotate(-8deg) scaleY(0.12)' }}
                     />
 
                     {/* New Layer 1 - Deep Emerald Glass */}
                     <div
-                        className="absolute top-[12%] left-1/2 -translate-x-1/2 w-[190%] md:w-[140%] h-[250px] rounded-[100%] animate-pulse border-y-[2px] border-emerald-400/30 bg-gradient-to-b from-emerald-300/5 via-transparent to-teal-400/10 backdrop-blur-sm shadow-[inset_0_0_35px_rgba(16,185,129,0.15)] blur-[5px]"
-                        style={{ transform: 'rotate(2deg) scaleY(0.15)', animationDuration: '11s', animationDelay: '1.5s' }}
+                        className="absolute top-[12%] left-1/2 -translate-x-1/2 w-[190%] md:w-[140%] h-[250px] rounded-[100%] border-y-[2px] border-emerald-400/30 bg-gradient-to-b from-emerald-300/5 via-transparent to-teal-400/10 backdrop-blur-[1px] shadow-[inset_0_0_15px_rgba(16,185,129,0.1)] blur-[3px] will-change-transform"
+                        style={{ transform: 'rotate(2deg) scaleY(0.15)' }}
                     />
 
                     {/* Core bright emission line - Sharp White Glass Edge */}
                     <div
-                        className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[180%] md:w-[130%] h-[200px] rounded-[100%] animate-pulse border-y-[2px] border-white/40 bg-gradient-to-b from-emerald-200/15 via-transparent to-emerald-200/15 backdrop-blur-sm shadow-[inset_0_0_30px_rgba(255,255,255,0.2)] blur-[3px]"
-                        style={{ transform: 'rotate(-3deg) scaleY(0.18)', animationDuration: '6s', animationDelay: '1s' }}
+                        className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[180%] md:w-[130%] h-[200px] rounded-[100%] border-y-[2px] border-white/40 bg-gradient-to-b from-emerald-200/15 via-transparent to-emerald-200/15 backdrop-blur-[1px] shadow-[inset_0_0_10px_rgba(255,255,255,0.1)] blur-[2px] will-change-transform"
+                        style={{ transform: 'rotate(-3deg) scaleY(0.18)' }}
                     />
 
                     {/* New Layer 2 - High Arching Cyan Glass */}
                     <div
-                        className="absolute top-[28%] left-1/2 -translate-x-1/2 w-[170%] md:w-[125%] h-[350px] rounded-[100%] animate-pulse border-y border-cyan-200/40 bg-gradient-to-b from-cyan-300/10 via-transparent to-blue-400/10 backdrop-blur-[3px] shadow-[inset_0_0_45px_rgba(34,211,238,0.1)] blur-[7px]"
-                        style={{ transform: 'rotate(-6deg) scaleY(0.14)', animationDuration: '9s', animationDelay: '2.5s' }}
+                        className="absolute top-[28%] left-1/2 -translate-x-1/2 w-[170%] md:w-[125%] h-[350px] rounded-[100%] border-y border-cyan-200/40 bg-gradient-to-b from-cyan-300/10 via-transparent to-blue-400/10 backdrop-blur-[2px] shadow-[inset_0_0_25px_rgba(34,211,238,0.1)] blur-[5px] will-change-transform"
+                        style={{ transform: 'rotate(-6deg) scaleY(0.14)' }}
                     />
 
                     {/* Secondary overlapping wave - Cyan Glass Layer */}
                     <div
-                        className="absolute top-[35%] left-1/2 -translate-x-1/2 w-[160%] md:w-[120%] h-[400px] rounded-[100%] animate-pulse border-y border-cyan-300/30 bg-gradient-to-b from-cyan-400/10 via-transparent to-teal-500/10 backdrop-blur-[4px] shadow-[inset_0_0_50px_rgba(34,211,238,0.1)] blur-[8px]"
-                        style={{ transform: 'rotate(5deg) scaleY(0.15)', animationDuration: '10s', animationDelay: '3s' }}
+                        className="absolute top-[35%] left-1/2 -translate-x-1/2 w-[160%] md:w-[120%] h-[400px] rounded-[100%] border-y border-cyan-300/30 bg-gradient-to-b from-cyan-400/10 via-transparent to-teal-500/10 backdrop-blur-[2px] shadow-[inset_0_0_20px_rgba(34,211,238,0.1)] blur-[6px] will-change-transform"
+                        style={{ transform: 'rotate(5deg) scaleY(0.15)' }}
                     />
 
                     {/* New Layer 3 - Low sweeping Teal Glass */}
                     <div
-                        className="absolute top-[42%] left-1/2 -translate-x-1/2 w-[150%] md:w-[110%] h-[250px] rounded-[100%] animate-pulse border-y-[2px] border-teal-200/40 bg-gradient-to-b from-teal-400/10 via-transparent to-emerald-300/10 backdrop-blur-sm shadow-[inset_0_0_30px_rgba(45,212,191,0.2)] blur-[5px]"
-                        style={{ transform: 'rotate(-4deg) scaleY(0.16)', animationDuration: '7.5s', animationDelay: '4.5s' }}
+                        className="absolute top-[42%] left-1/2 -translate-x-1/2 w-[150%] md:w-[110%] h-[250px] rounded-[100%] border-y-[2px] border-teal-200/40 bg-gradient-to-b from-teal-400/10 via-transparent to-emerald-300/10 backdrop-blur-[1px] shadow-[inset_0_0_15px_rgba(45,212,191,0.1)] blur-[4px] will-change-transform"
+                        style={{ transform: 'rotate(-4deg) scaleY(0.16)' }}
                     />
 
                     {/* Center Grounding Glow - Soft light source inside the glass */}
                     <div
-                        className="absolute top-[48%] left-1/2 -translate-x-1/2 w-[100%] md:w-[80%] h-[150px] bg-gradient-to-r from-transparent via-emerald-300/20 to-transparent rounded-[100%] blur-[25px] animate-pulse"
-                        style={{ transform: 'rotate(1deg) scaleY(0.2)', animationDuration: '7s', animationDelay: '2s' }}
+                        className="absolute top-[48%] left-1/2 -translate-x-1/2 w-[100%] md:w-[80%] h-[150px] bg-gradient-to-r from-transparent via-emerald-300/20 to-transparent rounded-[100%] blur-[20px] will-change-transform"
+                        style={{ transform: 'rotate(1deg) scaleY(0.2)' }}
                     />
                 </div>
             </div>
