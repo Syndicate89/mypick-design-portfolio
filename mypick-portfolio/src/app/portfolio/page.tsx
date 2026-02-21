@@ -7,6 +7,7 @@ const projects = [
     { id: 5, name: "Sewoom Medical Center", category: "Medical Center", color: "bg-blue-100", link: "https://syndicate89.github.io/sewoom-medical-center/", image: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fsyndicate89.github.io%2Fsewoom-medical-center%2F?w=1200" },
     { id: 6, name: "Newton IP Law Firm", category: "Law Firm", color: "bg-slate-100", link: "https://syndicate89.github.io/newton-ip-law-firm/", image: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fsyndicate89.github.io%2Fnewton-ip-law-firm%2F?w=1200" },
     { id: 7, name: "Design Youth", category: "Interior Design Studio", color: "bg-orange-100", link: "https://syndicate89.github.io/designyouth/", image: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fsyndicate89.github.io%2Fdesignyouth%2F?w=1200" },
+    { id: 8, name: "더 바른 정성 치과", category: "Dental Clinic", color: "bg-cyan-100", link: "https://syndicate89.github.io/barundental/", image: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fsyndicate89.github.io%2Fbarundental%2F?w=1200" },
 ];
 
 export const metadata = {

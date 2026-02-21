@@ -12,6 +12,7 @@ const projects = [
     { id: 5, name: "Sewoom Medical Center", category: "Medical Center", image: "/portfolio/5.png", link: "https://syndicate89.github.io/sewoom-medical-center/" },
     { id: 6, name: "Newton IP Law Firm", category: "Law Firm", image: "/portfolio/6.png", link: "https://syndicate89.github.io/newton-ip-law-firm/" },
     { id: 7, name: "Design Youth", category: "Interior Design Studio", image: "/portfolio/7.png", link: "https://syndicate89.github.io/designyouth/" },
+    { id: 8, name: "더 바른 정성 치과", category: "Dental Clinic", image: "/portfolio/8.png", link: "https://syndicate89.github.io/barundental/" },
 ];
 
 export default function PortfolioSection() {
