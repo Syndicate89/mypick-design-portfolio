@@ -31,7 +31,7 @@ export default function FaqSection() {
     };
 
     return (
-        <section id="faq" className="py-32 bg-black relative z-40">
+        <section id="faq" className="py-32 bg-background relative z-40">
             <div className="container mx-auto px-6 md:px-12 max-w-4xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -40,10 +40,10 @@ export default function FaqSection() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12 md:mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 md:mb-6 leading-[1.3] break-keep">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-4 md:mb-6 leading-[1.3] break-keep">
                         자주 묻는 질문 <span className="text-primary">FAQ</span>
                     </h2>
-                    <p className="text-base md:text-lg text-zinc-400 break-keep leading-relaxed">
+                    <p className="text-base md:text-lg text-muted-foreground break-keep leading-relaxed">
                         문의하시기 전 확인해 보시면 좋은 질문들을 모았습니다.
                     </p>
                 </motion.div>
@@ -56,22 +56,22 @@ export default function FaqSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
-                            className="bg-[#18181b] border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary/30"
+                            className="bg-zinc-50 border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary/40 shadow-sm"
                         >
                             <button
                                 onClick={() => toggleFaq(index)}
                                 className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none"
                             >
-                                <h3 className="text-lg md:text-xl font-bold text-white flex-1 pr-8 break-keep">
+                                <h3 className="text-lg md:text-xl font-bold text-foreground flex-1 pr-8 break-keep">
                                     <span className="text-primary mr-3">Q.</span>
                                     {faq.question}
                                 </h3>
                                 <motion.div
                                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                                     transition={{ duration: 0.3 }}
-                                    className="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"
+                                    className="flex-shrink-0 w-8 h-8 rounded-full bg-zinc-200 flex items-center justify-center"
                                 >
-                                    <ChevronDown className="w-5 h-5 text-zinc-400" />
+                                    <ChevronDown className="w-5 h-5 text-muted-foreground" />
                                 </motion.div>
                             </button>
 
@@ -84,7 +84,7 @@ export default function FaqSection() {
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3, ease: "easeInOut" }}
                                     >
-                                        <div className="px-6 md:px-8 pb-8 pt-0 text-zinc-300 leading-relaxed text-[0.95rem] md:text-base break-keep border-t border-white/5 mt-2">
+                                        <div className="px-6 md:px-8 pb-8 pt-0 text-zinc-600 leading-relaxed text-[0.95rem] md:text-base break-keep border-t border-border mt-2">
                                             <div className="pt-6">
                                                 <span className="text-primary font-bold mr-3">A.</span>
                                                 {faq.answer}

@@ -95,14 +95,14 @@ export default function HeroSection() {
                     let tipColor: string;
 
                     if (this.type === 'white') {
-                        strokeColor = 'rgba(255, 255, 255, 0.4)';
-                        tipColor = 'rgba(255, 255, 255, 0.95)';
+                        strokeColor = 'rgba(148, 163, 184, 0.4)'; // slate-400
+                        tipColor = 'rgba(100, 116, 139, 0.8)'; // slate-500
                     } else if (this.type === 'emerald') {
-                        strokeColor = 'rgba(52, 211, 153, 0.3)';
-                        tipColor = 'rgba(52, 211, 153, 0.9)';
+                        strokeColor = 'rgba(59, 130, 246, 0.4)'; // blue-500
+                        tipColor = 'rgba(37, 99, 235, 0.9)';     // blue-600
                     } else {
-                        strokeColor = 'rgba(6, 78, 59, 0.3)';
-                        tipColor = 'rgba(16, 185, 129, 0.8)';
+                        strokeColor = 'rgba(29, 78, 216, 0.3)';  // blue-700
+                        tipColor = 'rgba(30, 58, 138, 0.8)';     // blue-900
                     }
 
                     ctx!.beginPath();
@@ -137,10 +137,10 @@ export default function HeroSection() {
         const init = () => {
             particles.length = 0;
             const isMobile = w < 768;
-            // Reduce max volume for better performance
+            // Increased by 25% as requested
             const numberOfParticles = isMobile
-                ? Math.min((w * h) / 2000, 400)
-                : Math.min((w * h) / 1500, 1000);
+                ? Math.min((w * h) / 1600, 500)
+                : Math.min((w * h) / 1200, 1250);
             for (let i = 0; i < numberOfParticles; i++) {
                 particles.push(new Particle());
             }
@@ -193,26 +193,26 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-black">
+        <section ref={sectionRef} className="relative min-h-[90vh] flex flex-col items-center justify-center pt-0 pb-32 overflow-hidden bg-background">
             {/* Custom Canvas Particle Background */}
             <canvas ref={canvasRef} className="absolute inset-0 z-0 w-full h-full pointer-events-auto" />
 
             {/* Gradient Overlay for Text Readability - Reduced opacity to reveal the waves */}
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none" />
+            <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/40 via-transparent to-white/80 pointer-events-none" />
 
-            <div className="container relative z-20 mx-auto px-6 md:px-12 flex flex-col items-center text-center">
+            <div className="container relative z-20 mx-auto px-6 md:px-12 flex flex-col items-center text-center -mt-20">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="max-w-4xl flex flex-col items-center"
                 >
-                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.3] mb-8 text-white break-keep">
-                        <span className="block mb-4 text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-zinc-300">홈페이지가 없다면,</span>
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.3] mb-8 text-foreground break-keep">
+                        <span className="block mb-4 text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-zinc-600">홈페이지가 없다면,</span>
                         고객은 <span className="text-primary">신뢰하지 않습니다</span>
                     </h1>
 
-                    <p className="text-base md:text-xl text-zinc-400 mx-auto leading-relaxed font-medium mb-12 break-keep">
+                    <p className="text-base md:text-xl text-zinc-500 mx-auto leading-relaxed font-medium mb-12 break-keep">
                         온라인에서의 첫인상은 비즈니스의 퀄리티와 직결됩니다.<br className="hidden md:block" />
                         압도적인 디자인과 탄탄한 기술력으로 확실한 신뢰를 구축해 드립니다.
                     </p>

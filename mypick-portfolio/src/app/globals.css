@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #000000;
-  --color-foreground: #ffffff;
-  --color-primary: #00d084;
-  /* Emerald/Green-ish */
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+  --color-primary: #3b82f6;
+  /* Blue-500 */
   --color-primary-foreground: #ffffff;
-  --color-muted: #18181b;
-  /* Zinc-900 */
-  --color-muted-foreground: #a1a1aa;
-  /* Zinc-400 */
-  --color-border: #27272a;
-  /* Zinc-800 */
+  --color-muted: #f4f4f5;
+  /* Zinc-100 */
+  --color-muted-foreground: #71717a;
+  /* Zinc-500 */
+  --color-border: #e4e4e7;
+  /* Zinc-200 */
 }
 
 /*
@@ -35,8 +35,8 @@
 
 @layer base {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
+    --background: #ffffff;
+    --foreground: #000000;
   }
 }
 
@@ -53,14 +53,35 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #f4f4f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #d4d4d8;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #404040;
+  background: #a1a1aa;
+}
+
+/* Custom Animations */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+  /* Ensure hardware acceleration for smooth scrolling */
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

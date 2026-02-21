@@ -45,7 +45,7 @@ export default function PainPointsSection() {
     };
 
     return (
-        <section className="py-32 bg-black relative z-30">
+        <section className="py-32 bg-background relative z-30">
             <div className="container mx-auto px-6 md:px-12 max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ export default function PainPointsSection() {
                     transition={{ duration: 0.6 }}
                     className="mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.3] break-keep">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.3] break-keep">
                         홈페이지 제작 의뢰하기<br />
                         걱정 많으시죠?
                     </h2>
@@ -71,7 +71,7 @@ export default function PainPointsSection() {
                         <motion.div
                             variants={itemVariants}
                             key={index}
-                            className="bg-[#18181b] rounded-[2rem] p-4 flex flex-col transition-transform duration-500 hover:-translate-y-2 border border-white border-opacity-5"
+                            className="bg-zinc-50 rounded-[2rem] p-4 flex flex-col transition-transform duration-500 hover:-translate-y-2 border border-border shadow-sm hover:shadow-md"
                         >
                             {/* Image Area */}
                             <div className={`w-full h-56 lg:h-64 rounded-[1.5rem] mb-6 flex items-center justify-center overflow-hidden relative ${point.bgColor}`}>
@@ -92,10 +92,10 @@ export default function PainPointsSection() {
 
                             {/* Text Area */}
                             <div className="px-2 pb-4 flex flex-col flex-grow">
-                                <h3 className="text-xl md:text-[1.35rem] font-bold mb-3 text-white tracking-tight break-keep">
+                                <h3 className="text-xl md:text-[1.35rem] font-bold mb-3 text-foreground tracking-tight break-keep">
                                     {point.title}
                                 </h3>
-                                <p className="text-zinc-400 text-sm md:text-[0.95rem] leading-[1.6] break-keep">
+                                <p className="text-muted-foreground text-sm md:text-[0.95rem] leading-[1.6] break-keep">
                                     {point.desc}
                                 </p>
                             </div>

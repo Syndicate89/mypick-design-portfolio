@@ -70,11 +70,11 @@ export default function PricingSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
-                            className={`relative bg-zinc-900 border rounded-3xl p-8 md:p-10 flex flex-col transition-transform duration-300 hover:-translate-y-2 shadow-sm hover:shadow-md ${plan.popular ? "border-primary shadow-[0_0_30px_rgba(0,208,132,0.15)]" : "border-border"
+                            className={`relative bg-white border rounded-3xl p-8 md:p-10 flex flex-col transition-transform duration-300 hover:-translate-y-2 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] ${plan.popular ? "border-primary shadow-[0_0_30px_rgba(0,208,132,0.15)]" : "border-border"
                                 }`}
                         >
                             {plan.popular && (
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-black px-4 py-1 rounded-full text-sm font-bold tracking-wide">
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-sm">
                                     Mypick&apos;s Choice
                                 </div>
                             )}
@@ -101,9 +101,9 @@ export default function PricingSection() {
                                 href="http://pf.kakao.com/_UiPpn/chat"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`w-full py-4 rounded-xl font-bold tracking-wide transition-colors duration-300 block text-center ${plan.popular
-                                    ? "bg-primary text-black hover:bg-emerald-500"
-                                    : "bg-muted text-foreground hover:bg-zinc-800 border border-border"
+                                className={`w-full py-4 rounded-xl font-bold tracking-wide transition-colors duration-300 block text-center shadow-sm ${plan.popular
+                                    ? "bg-primary text-white hover:bg-emerald-500"
+                                    : "bg-zinc-100 text-foreground hover:bg-zinc-200 border border-border"
                                     }`}
                             >
                                 문의하기

@@ -42,52 +42,52 @@ export default function DifferentiatorSection() {
             {/* Dark Background with Realistic Wavy Aurora Overlay (from HeroSection) */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 {/* Background Core Darkness */}
-                <div className="absolute inset-0 bg-black z-0"></div>
+                <div className="absolute inset-0 bg-white z-0"></div>
 
                 {/* Subdued ambient back light */}
-                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80%] h-[500px] bg-emerald-900/10 blur-[100px] rounded-full z-10" />
+                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80%] h-[500px] bg-blue-200/60 blur-[100px] rounded-full z-10" />
 
                 {/* The sweeping Aurora Waves constructed via CSS transforms */}
-                <div className="absolute top-[20%] lg:top-[30%] w-full h-[70vh] z-10 flex justify-center perspective-[1000px] mix-blend-screen opacity-[0.65] will-change-transform">
+                <div className="absolute top-[20%] lg:top-[30%] w-full h-[70vh] z-10 flex justify-center perspective-[1000px] mix-blend-multiply opacity-100 will-change-transform">
                     {/* Background wide sweeping wave - Thick Glass Ribbon */}
                     <div
-                        className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[200%] md:w-[150%] h-[300px] rounded-[100%] border-y border-emerald-300/40 bg-gradient-to-b from-emerald-400/10 via-transparent to-cyan-500/10 backdrop-blur-[1px] shadow-[inset_0_0_20px_rgba(52,211,153,0.1)] blur-[4px] will-change-transform"
+                        className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[200%] md:w-[150%] h-[300px] rounded-[100%] border-y border-blue-400/50 bg-gradient-to-b from-blue-500/20 via-transparent to-sky-500/20 backdrop-blur-[1px] shadow-[inset_0_0_30px_rgba(59,130,246,0.15)] blur-[3px] will-change-transform"
                         style={{ transform: 'rotate(-8deg) scaleY(0.12)' }}
                     />
 
-                    {/* New Layer 1 - Deep Emerald Glass */}
+                    {/* New Layer 1 - Deep Emerald Glass -> Deep Blue Glass */}
                     <div
-                        className="absolute top-[12%] left-1/2 -translate-x-1/2 w-[190%] md:w-[140%] h-[250px] rounded-[100%] border-y-[2px] border-emerald-400/30 bg-gradient-to-b from-emerald-300/5 via-transparent to-teal-400/10 backdrop-blur-[1px] shadow-[inset_0_0_15px_rgba(16,185,129,0.1)] blur-[3px] will-change-transform"
+                        className="absolute top-[12%] left-1/2 -translate-x-1/2 w-[190%] md:w-[140%] h-[250px] rounded-[100%] border-y-[2px] border-blue-500/40 bg-gradient-to-b from-blue-500/15 via-transparent to-indigo-500/20 backdrop-blur-[1px] shadow-[inset_0_0_25px_rgba(37,99,235,0.15)] blur-[2px] will-change-transform"
                         style={{ transform: 'rotate(2deg) scaleY(0.15)' }}
                     />
 
                     {/* Core bright emission line - Sharp White Glass Edge */}
                     <div
-                        className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[180%] md:w-[130%] h-[200px] rounded-[100%] border-y-[2px] border-white/40 bg-gradient-to-b from-emerald-200/15 via-transparent to-emerald-200/15 backdrop-blur-[1px] shadow-[inset_0_0_10px_rgba(255,255,255,0.1)] blur-[2px] will-change-transform"
+                        className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[180%] md:w-[130%] h-[200px] rounded-[100%] border-y-[2px] border-blue-400/60 bg-gradient-to-b from-blue-400/25 via-transparent to-blue-400/25 backdrop-blur-[1px] shadow-[inset_0_0_15px_rgba(59,130,246,0.25)] blur-[1px] will-change-transform"
                         style={{ transform: 'rotate(-3deg) scaleY(0.18)' }}
                     />
 
-                    {/* New Layer 2 - High Arching Cyan Glass */}
+                    {/* New Layer 2 - High Arching Cyan Glass -> Sky Glass */}
                     <div
-                        className="absolute top-[28%] left-1/2 -translate-x-1/2 w-[170%] md:w-[125%] h-[350px] rounded-[100%] border-y border-cyan-200/40 bg-gradient-to-b from-cyan-300/10 via-transparent to-blue-400/10 backdrop-blur-[2px] shadow-[inset_0_0_25px_rgba(34,211,238,0.1)] blur-[5px] will-change-transform"
+                        className="absolute top-[28%] left-1/2 -translate-x-1/2 w-[170%] md:w-[125%] h-[350px] rounded-[100%] border-y border-sky-400/50 bg-gradient-to-b from-sky-400/20 via-transparent to-blue-500/20 backdrop-blur-[2px] shadow-[inset_0_0_35px_rgba(14,165,233,0.15)] blur-[4px] will-change-transform"
                         style={{ transform: 'rotate(-6deg) scaleY(0.14)' }}
                     />
 
-                    {/* Secondary overlapping wave - Cyan Glass Layer */}
+                    {/* Secondary overlapping wave - Cyan Glass Layer -> Sky Glass Layer */}
                     <div
-                        className="absolute top-[35%] left-1/2 -translate-x-1/2 w-[160%] md:w-[120%] h-[400px] rounded-[100%] border-y border-cyan-300/30 bg-gradient-to-b from-cyan-400/10 via-transparent to-teal-500/10 backdrop-blur-[2px] shadow-[inset_0_0_20px_rgba(34,211,238,0.1)] blur-[6px] will-change-transform"
+                        className="absolute top-[35%] left-1/2 -translate-x-1/2 w-[160%] md:w-[120%] h-[400px] rounded-[100%] border-y border-sky-400/40 bg-gradient-to-b from-sky-500/20 via-transparent to-indigo-600/20 backdrop-blur-[2px] shadow-[inset_0_0_30px_rgba(14,165,233,0.15)] blur-[5px] will-change-transform"
                         style={{ transform: 'rotate(5deg) scaleY(0.15)' }}
                     />
 
-                    {/* New Layer 3 - Low sweeping Teal Glass */}
+                    {/* New Layer 3 - Low sweeping Teal Glass -> Indigo Glass */}
                     <div
-                        className="absolute top-[42%] left-1/2 -translate-x-1/2 w-[150%] md:w-[110%] h-[250px] rounded-[100%] border-y-[2px] border-teal-200/40 bg-gradient-to-b from-teal-400/10 via-transparent to-emerald-300/10 backdrop-blur-[1px] shadow-[inset_0_0_15px_rgba(45,212,191,0.1)] blur-[4px] will-change-transform"
+                        className="absolute top-[42%] left-1/2 -translate-x-1/2 w-[150%] md:w-[110%] h-[250px] rounded-[100%] border-y-[2px] border-indigo-400/50 bg-gradient-to-b from-indigo-500/20 via-transparent to-blue-400/20 backdrop-blur-[1px] shadow-[inset_0_0_25px_rgba(99,102,241,0.15)] blur-[3px] will-change-transform"
                         style={{ transform: 'rotate(-4deg) scaleY(0.16)' }}
                     />
 
                     {/* Center Grounding Glow - Soft light source inside the glass */}
                     <div
-                        className="absolute top-[48%] left-1/2 -translate-x-1/2 w-[100%] md:w-[80%] h-[150px] bg-gradient-to-r from-transparent via-emerald-300/20 to-transparent rounded-[100%] blur-[20px] will-change-transform"
+                        className="absolute top-[48%] left-1/2 -translate-x-1/2 w-[100%] md:w-[80%] h-[150px] bg-gradient-to-r from-transparent via-blue-400/30 to-transparent rounded-[100%] blur-[20px] will-change-transform"
                         style={{ transform: 'rotate(1deg) scaleY(0.2)' }}
                     />
                 </div>
@@ -118,7 +118,7 @@ export default function DifferentiatorSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
-                            className="bg-zinc-900 border border-border rounded-2xl p-6 md:p-8 hover:bg-zinc-800 transition-colors duration-300 shadow-sm hover:shadow-md"
+                            className="bg-white border border-border rounded-2xl p-6 md:p-8 hover:bg-zinc-50 transition-colors duration-300 shadow-sm hover:shadow-md"
                         >
                             <div className="w-12 h-12 md:w-14 md:h-14 bg-muted rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-border">
                                 {feature.icon}

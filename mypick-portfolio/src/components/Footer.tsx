@@ -22,7 +22,7 @@ export default function Footer() {
                         (고퀄리티 작업을 위한 100% 예약 진행)
                     </p>
 
-                    <div className="max-w-xl mx-auto bg-zinc-900 p-10 md:p-14 rounded-3xl border border-border shadow-sm text-center relative group">
+                    <div className="max-w-xl mx-auto bg-zinc-50 p-10 md:p-14 rounded-3xl border border-border shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center relative group">
                         <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">마이픽 비즈니스 상담</h3>
                         <p className="text-muted-foreground mb-10 text-sm md:text-base">
                             카카오톡으로 언제 어디서든 빠르고 간편하게<br className="hidden md:block" />
@@ -42,7 +42,7 @@ export default function Footer() {
                             <span className="relative z-10">카카오톡 문의하기</span>
                         </a>
 
-                        <p className="text-center text-zinc-400 text-xs mt-6 font-medium">* 연중무휴 24시간 빠른 채팅 상담</p>
+                        <p className="text-center text-zinc-500 text-xs mt-6 font-medium">* 연중무휴 24시간 빠른 채팅 상담</p>
                     </div>
                 </motion.div>
 
@@ -51,19 +51,19 @@ export default function Footer() {
                         <div className="text-3xl font-black tracking-tighter cursor-pointer text-foreground mb-6" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                             mypickdesign.
                         </div>
-                        <p className="text-sm text-zinc-500 leading-loose max-w-sm">
+                        <p className="text-sm text-zinc-600 leading-loose max-w-sm">
                             우리는 클라이언트의 비즈니스 목적에 완벽하게 부합하는 커스텀 솔루션을 제안하고 직접 개발합니다.
                         </p>
                     </div>
 
-                    <div className="text-sm text-zinc-500 md:text-right leading-loose flex flex-col items-start md:items-end">
+                    <div className="text-sm text-zinc-600 md:text-right leading-loose flex flex-col items-start md:items-end">
                         <p>회사명 : 마이픽 디자인</p>
                         <p>이메일 : tpoint1014@gmail.com</p>
                         <a
                             href="https://www.instagram.com/mypick.design/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-zinc-400 hover:text-primary transition-colors flex items-center gap-2 mt-2 font-medium"
+                            className="text-zinc-500 hover:text-primary transition-colors flex items-center gap-2 mt-2 font-medium"
                         >
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -72,7 +72,7 @@ export default function Footer() {
                             </svg>
                             @mypick.design
                         </a>
-                        <p className="mt-4 text-xs text-zinc-700">
+                        <p className="mt-4 text-xs text-zinc-400">
                             © {new Date().getFullYear()} Mypick Design. All Rights Reserved.
                         </p>
                     </div>
