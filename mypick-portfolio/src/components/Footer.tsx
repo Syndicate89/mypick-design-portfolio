@@ -39,7 +39,7 @@ export default function Footer() {
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 3C6.477 3 2 6.545 2 10.916C2 13.791 3.593 16.32 6.014 17.822L5.05 21.287L8.68 18.914C9.728 19.22 10.844 19.387 12 19.387C17.523 19.387 22 15.841 22 11.47C22 7.098 17.523 3 12 3Z" />
                             </svg>
-                            <span className="relative z-10">카카오톡 문의하기</span>
+                            <span className="relative z-10">무료 상담 및 견적받기</span>
                         </a>
 
                         <p className="text-center text-zinc-500 text-xs mt-6 font-medium">* 연중무휴 24시간 빠른 채팅 상담</p>
