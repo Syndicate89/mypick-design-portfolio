@@ -6,13 +6,13 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
 const projects = [
-    { id: 1, name: "In Pilates", category: "Health & Fitness", image: "/portfolio/1.png", link: "https://syndicate89.github.io/inpilates/" },
-    { id: 2, name: "NUEVO", category: "Emotional Forest Stay", image: "/portfolio/2.png", link: "https://syndicate89.github.io/nuevo/" },
-    { id: 4, name: "Stay Yunseul", category: "Private Stay", image: "/portfolio/4.png", link: "https://syndicate89.github.io/stay-yunseul/" },
-    { id: 5, name: "Sewoom Medical Center", category: "Medical Center", image: "/portfolio/5.png", link: "https://syndicate89.github.io/sewoom-medical-center/" },
-    { id: 6, name: "Newton IP Law Firm", category: "Law Firm", image: "/portfolio/6.png", link: "https://syndicate89.github.io/newton-ip-law-firm/" },
-    { id: 7, name: "Design Youth", category: "Interior Design Studio", image: "/portfolio/7.png", link: "https://syndicate89.github.io/designyouth/" },
-    { id: 8, name: "더 바른 정성 치과", category: "Dental Clinic", image: "/portfolio/8.png", link: "https://syndicate89.github.io/barundental/" },
+    { id: 1, name: "In Pilates", category: "Health & Fitness", image: "/portfolio/1.png", imageMobile: "/portfolio/1_mobile.png", link: "https://syndicate89.github.io/inpilates/" },
+    { id: 2, name: "NUEVO", category: "Emotional Forest Stay", image: "/portfolio/2.png", imageMobile: "/portfolio/2_mobile.png", link: "https://syndicate89.github.io/nuevo/" },
+    { id: 4, name: "Stay Yunseul", category: "Private Stay", image: "/portfolio/4.png", imageMobile: "/portfolio/4_mobile.png", link: "https://syndicate89.github.io/stay-yunseul/" },
+    { id: 5, name: "Sewoom Medical Center", category: "Medical Center", image: "/portfolio/5.png", imageMobile: "/portfolio/5_mobile.png", link: "https://syndicate89.github.io/sewoom-medical-center/" },
+    { id: 6, name: "Newton IP Law Firm", category: "Law Firm", image: "/portfolio/6.png", imageMobile: "/portfolio/6_mobile.png", link: "https://syndicate89.github.io/newton-ip-law-firm/" },
+    { id: 7, name: "Design Youth", category: "Interior Design Studio", image: "/portfolio/7.png", imageMobile: "/portfolio/7_mobile.png", link: "https://syndicate89.github.io/designyouth/" },
+    { id: 8, name: "더 바른 정성 치과", category: "Dental Clinic", image: "/portfolio/8.png", imageMobile: "/portfolio/8_mobile.png", link: "https://syndicate89.github.io/barundental/" },
 ];
 
 export default function PortfolioSection() {
@@ -85,7 +85,7 @@ export default function PortfolioSection() {
                                                 {/* Mobile Screen Content */}
                                                 <div className="absolute inset-0 w-full h-full">
                                                     <Image
-                                                        src={project.image}
+                                                        src={project.imageMobile || project.image}
                                                         alt={`${project.name} Mobile`}
                                                         fill
                                                         sizes="(max-width: 768px) 25vw, 15vw"
