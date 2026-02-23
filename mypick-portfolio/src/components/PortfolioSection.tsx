@@ -78,6 +78,26 @@ export default function PortfolioSection() {
                                                 <div className="w-1 md:w-2 h-1 md:h-2 rounded-full bg-zinc-800 shadow-inner"></div>
                                             </div>
                                         </div>
+
+                                        {/* iPhone Frame */}
+                                        <div className="absolute -right-[4%] md:-right-[6%] -bottom-[4%] md:-bottom-[6%] w-[22%] pt-[46%] rounded-[0.8rem] md:rounded-[2rem] border-[3px] md:border-[6px] border-zinc-700 bg-black shadow-[0_20px_40px_rgba(0,0,0,0.5)] overflow-hidden transition-transform duration-700 ease-out group-hover:translate-x-4 group-hover:-translate-y-4 z-30">
+                                            <div className="absolute inset-0 overflow-hidden bg-zinc-900 rounded-[0.5rem] md:rounded-[1.6rem]">
+                                                {/* Mobile Screen Content */}
+                                                <div className="absolute inset-0 w-full h-full">
+                                                    <Image
+                                                        src={project.image}
+                                                        alt={`${project.name} Mobile`}
+                                                        fill
+                                                        sizes="(max-width: 768px) 25vw, 15vw"
+                                                        style={{ imageRendering: "-webkit-optimize-contrast", objectPosition: "top center" }}
+                                                        className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                                    />
+                                                </div>
+                                                {/* Dynamic Island / Notch */}
+                                                <div className="absolute top-[4%] left-1/2 -translate-x-1/2 w-[35%] h-[12px] md:h-[18px] bg-black rounded-full z-10 shadow-inner"></div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             ))}
